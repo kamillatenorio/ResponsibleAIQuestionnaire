@@ -13,7 +13,6 @@ body, html {
     align-items: center;
 }
 
-
 .info-container {
     width: 80%;
     max-width: 1000px;
@@ -35,8 +34,8 @@ body, html {
     font-weight: 900;
     line-height: normal;
     margin-bottom: 20px;
-    text-align: left; /* Align the title to the left */
-    width: 100%; /* Make sure it takes the full width of the container */
+    text-align: left;
+    width: 100%;
 }
 
 .content-wrapper {
@@ -70,7 +69,6 @@ body, html {
 
 .text-main {
     font-size: 18px;
-    font-weight: bold;
     color: #333;
 }
 
@@ -100,4 +98,48 @@ body, html {
 
 .next-button:hover {
     background-color: #003366;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .info-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .text-main,
+    .text-secondary {
+        font-size: 16px;
+    }
+
+    .next-button {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+}
+
+/* Media query for very small screens */
+@media (max-width: 480px) {
+    .info-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .text-main,
+    .text-secondary {
+        font-size: 14px;
+    }
+
+    .next-button {
+        font-size: 12px;
+        padding: 6px 15px;
+    }
 }

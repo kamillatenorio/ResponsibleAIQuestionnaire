@@ -6,7 +6,7 @@
 
 body, html {
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: Futura, Arial, sans-serif;
     background-color: #f3f3f3;
     display: flex;
     justify-content: center;
@@ -21,6 +21,7 @@ body, html {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Headings and text */
 h1 {
     font-size: 48px;
     color: #02448A;
@@ -44,4 +45,36 @@ button {
 
 button:hover {
     background-color: #003366;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+/* Media query for very small screens */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
 }

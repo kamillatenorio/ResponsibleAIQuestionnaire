@@ -7,7 +7,7 @@ const questions = [
         correctAnswer: "true"
     },
     {
-        question: "Generative AI can create realistic and potentially damaging videos of people without their consent.",
+        question: "In 2022, AI-generated deepfake videos were used to spread misinformation during international conflicts.",
         correctAnswer: "true"
     }
 ];
