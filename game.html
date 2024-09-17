@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Game</title>
+    <title>AI Quiz Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="quiz-container">
         <div class="question-box">
-            <p class="question-text">Generating one image using an AI system can use almost as much energy as charging your smartphone.</p>
+            <p class="question-text"></p> <!-- This will be dynamically populated -->
         </div>
         <div class="options-container">
             <button class="option-button" data-answer="true"><span>1</span> True</button>
@@ -18,8 +18,10 @@
         <div class="score-box">
             <p>Score: <span id="score">0 XP</span></p>
         </div>
+        <!-- Initially hide the Read More button -->
+        <button class="read-more-button" style="display: none;">Read More</button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="game.js"></script>
 </body>
 </html>
