@@ -69,13 +69,20 @@ body, html {
 
 .text-main {
     font-size: 18px;
-    color: #333;
+    color: #000;
+    font-family: "Fira Sans";
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
 }
 
 .text-secondary {
     font-size: 18px;
-    margin-top: 10px;
-    color: #333;
+    color: #000;
+    font-family: "Fira Sans";
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
 }
 
 .reference {

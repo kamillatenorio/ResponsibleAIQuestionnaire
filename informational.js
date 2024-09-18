@@ -11,12 +11,30 @@ const informationalContent = [
     },
     {
         title: "Misinformation",
-        imageSrc: "your-image-url-2.png",
+        imageSrc: "Misinformation.svg",
         imageAlt: "Generative AI Misinformation",
-        caption: "Illustration retrieved from <a href='https://www.example.com' target='_blank'>Example Source</a>.",
-        mainText: "Yes, it is true! In 2022, AI-generated deepfake videos were used to spread misinformation during international conflicts.",
-        secondaryText: "With Generative AI systems, it became impressively easy to generate impressive image, audios and videos.",
-        reference: "[1] BBC News. (2022, March 18). Deepfake presidents used in Russia-Ukraine war.  <a href='https://www.bbc.com/news/technology-60780142' target='_blank'>Read More</a>."
+        caption: "Realistic images and messages can be instantly generated with AI, with only subtle details revealing their artificial nature. | © Bild: erstellt mit einer KI.",
+        mainText: "Yes, it is true! Some AI generative systems can be used by humans that intentionally want to cause harm.  These systems may offer a lower-cost way of creating disinformation at scale and which are harder to detect.",
+        secondaryText: "For example, the AI created picture of Pope Francis that went viral shows how AI can be used to accelerate the creation of fake news.",
+        reference: ""
+    }, 
+    {
+        title: "Threats to Democracy and Civil Rights",
+        imageSrc: "Politic.svg",
+        imageAlt: "Generative AI Misinformation",
+        caption: "Rosenberg, M., Confessore, N., & Cadwalladr, C. (2018, March 17). How Trump consultants exploited the Facebook data of millions. The New York Times.  <a href='https://www.nytimes.com/2018/03/17/us/politics/cambridge-analytica-trump-campaign.html' target='_blank'>Example Source</a>.",
+        mainText: "Use of AI adaptive systems to present readers with personalised news stories based on their previous reading history, can increase societal polarization.<br>",
+        secondaryText: "A famous example was the Cambridge Analytica case, where they used data breached from Facebook to profile users based on their behaviors, and considering these profiles, they automatically made automated decisions to personalize content for political manipulation purposes.",
+        reference: ""
+    },
+    {
+        title: "Surveillance",
+        imageSrc: "Surveillance.svg",
+        imageAlt: "Generative AI Misinformation",
+        caption: "In J. Delcker, Clearview AI controversy highlights rise of high-tech surveillance. DW. <a href='https://www.dw.com/en/clearview-ai-controversy-highlights-rise-of-high-tech-surveillance/a-57890435' target='_blank'>Example Source</a>.",
+        mainText: "AI image recognition systems when installed in publicly accessible spaces, may infringe on the privacy of a large number of people, and create a sense of constant surveillance.",
+        secondaryText: "For example, a facial recognition software developed based on billions of photos scraped from the internet, has been used by police in different countries and  raising concerns among Human Rights’ researchers about citizen surveillance.",
+        reference: ""
     }
 ];
 

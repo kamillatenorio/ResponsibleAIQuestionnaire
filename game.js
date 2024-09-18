@@ -7,7 +7,15 @@ const questions = [
         correctAnswer: "true"
     },
     {
-        question: "In 2022, AI-generated deepfake videos were used to spread misinformation during international conflicts.",
+        question: "AI generative systems, primarily designed to foster creativity, are contributing to the dissemination of misinformation.",
+        correctAnswer: "true"
+    },
+    {
+        question: "A firm (Cambridge Analytica) used data from Facebook to automatically profile users and personalize content for political manipulation purposes.",
+        correctAnswer: "true"
+    },
+    {
+        question: "Facial recognition software developed using billions of photos scraped from the internet has been used by police in various countries, raising concerns among Human Rights researchers about citizen surveillance.",
         correctAnswer: "true"
     }
 ];
