@@ -48,7 +48,7 @@ function loadQuestion() {
     });
 
     // Display the score from localStorage
-    document.getElementById('score').textContent = `${getScore()} XP`;
+    document.getElementById('score').textContent = `${getScore()}`;
 }
 
 // Event listeners for option buttons
@@ -60,15 +60,15 @@ document.querySelectorAll('.option-button').forEach(button => {
         // Change button color based on correctness and update score
         if (isCorrect) {
             this.style.backgroundColor = '#009599'; // Correct: Greenish color
-            currentScore += 10; // Increase score by 10 for correct answer
+            currentScore += 1; // Increase score by 1 for correct answer
         } else {
             this.style.backgroundColor = '#DDB527'; // Wrong: Yellowish color
-            currentScore -= 5; // Decrease score by 5 for wrong answer
+            currentScore -= 0; // Decrease score by 0 for wrong answer
         }
 
         // Update the score display and save it in localStorage
         updateScore(currentScore);
-        document.getElementById('score').textContent = `${currentScore} XP`;
+        document.getElementById('score').textContent = `${currentScore}`;
 
         // Disable all buttons after the choice is made
         document.querySelectorAll('.option-button').forEach(btn => {
