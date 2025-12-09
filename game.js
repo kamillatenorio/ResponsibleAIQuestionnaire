@@ -3,19 +3,19 @@ let currentQuestionIndex = 0; // To track which question is currently being show
 // List of questions and answers
 const questions = [
     {
-        question: "Generating one image using an AI system can use almost as much energy as charging your smartphone.",
+        question: "Generating an image using an AI system can consume almost as much energy as charging your smartphone.",
         correctAnswer: "true"
     },
     {
-        question: "AI generative systems, primarily designed to foster creativity, are contributing to the dissemination of misinformation.",
+        question: "Although generative AI systems have great potential to foster creativity, they also contribute to the spread of misinformation.",
         correctAnswer: "true"
     },
     {
-        question: "A firm (Cambridge Analytica) used data from Facebook to automatically profile users and personalize content for political manipulation purposes.",
+        question: "A company used data from Facebook to automatically create user profiles and personalize content for political manipulation purposes.",
         correctAnswer: "true"
     },
     {
-        question: "Facial recognition software developed using billions of photos scraped from the internet has been used by police in various countries, raising concerns among Human Rights researchers about citizen surveillance.",
+        question: "Facial recognition software developed using billions of photos from the internet has been used by police in various countries, raising concerns among human rights researchers about the surveillance of citizens.",
         correctAnswer: "true"
     }
 ];

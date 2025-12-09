@@ -23,6 +23,7 @@ body, html {
     padding-left: 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
     position: relative; 
+    margin-left: 10px;
 }
 
 .question-box {
@@ -37,6 +38,7 @@ body, html {
     margin-bottom: 20px;
     text-align: left;
     margin-left: 0; 
+    overflow-x: auto; 
 }
 
 .question-text {
@@ -127,11 +129,13 @@ body, html {
     .quiz-container {
         width: 90%;
         padding: 15px;
+        margin-left: 10px;
     }
 
     .question-box {
         font-size: 20px;
         padding: 15px;
+        overflow-x: auto;
     }
 
     .option-button {
@@ -153,6 +157,10 @@ body, html {
         font-size: 14px;
         padding: 8px 15px;
     }
+
+    .question-text {
+        font-size: 28px;
+    }
 }
 
 /* Media query for very small screens (mobile portrait) */
@@ -160,11 +168,13 @@ body, html {
     .quiz-container {
         width: 100%;
         padding: 10px;
+        margin-left: 10px;
     }
 
     .question-box {
         font-size: 18px;
         padding: 10px;
+        overflow-x: auto;
     }
 
     .option-button {
@@ -185,5 +195,8 @@ body, html {
     .read-more-button {
         font-size: 12px;
         padding: 6px 10px;
+    }
+    .question-text {
+        font-size: 24px;
     }
 }
