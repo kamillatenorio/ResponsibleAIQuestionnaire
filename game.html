@@ -9,18 +9,42 @@
 </head>
 <body>
     <div class="quiz-container">
-        <div class="question-box">
-            <p class="question-text"></p> <!-- This will be dynamically populated -->
-        </div>
-        <div class="options-container">
-              <button class="option-button" data-answer="true"><span>1</span> True</button>
-              <button class="option-button" data-answer="false"><span>2</span> False</button>
-        </div>
-        <div class="score-box">
-              <p>Correct: <span id="score">0</span></p>
-        </div>
-        <!-- Initially hide the Read More button -->
-           <button class="read-more-button" style="display: none;">Read more</button>
+        <section class="screen-view question-view" data-view="question">
+            <div class="question-box">
+                <p class="question-text"></p>
+            </div>
+            <div class="options-container">
+                <button class="option-button" data-answer="true"><span>1</span> True</button>
+                <button class="option-button" data-answer="false"><span>2</span> False</button>
+            </div>
+            <div class="score-box">
+                <p>Correct: <span id="score">0</span></p>
+            </div>
+            <button class="read-more-button" style="display: none;">Read more</button>
+        </section>
+
+        <section class="screen-view info-view" data-view="info" hidden>
+            <h1 class="title"></h1>
+            <div class="content-wrapper">
+                <div class="image-section">
+                    <img src="" alt="" class="info-image">
+                    <p class="image-caption"></p>
+                </div>
+                <div class="text-section">
+                    <p class="text-main"></p>
+                    <p class="text-secondary"></p>
+                    <p class="reference"></p>
+                </div>
+            </div>
+            <button class="next-button">NEXT</button>
+        </section>
+
+        <section class="screen-view end-view" data-view="end" hidden>
+            <h1>Game Over</h1>
+            <p>Great! You answered <span id="final-score">0</span> questions correctly.</p>
+            <p>We hope you found it interesting to learn more about some facts related to ethical concerns regarding AI.<br>In this course, we will have the opportunity to discuss the topic of responsible AI in more detail.<br>Now scroll down the page and discuss the question with your fellow students.</p>
+            <button class="restart-button">Restart</button>
+        </section>
     </div>
 
     <script src="game.js"></script>

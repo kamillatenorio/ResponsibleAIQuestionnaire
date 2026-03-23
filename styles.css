@@ -124,6 +124,107 @@ body, html {
     background-color: #003366;
 }
 
+.screen-view[hidden] {
+    display: none !important;
+}
+
+.info-view {
+    width: 100%;
+    text-align: left;
+}
+
+.info-view .title {
+    font-size: 48px;
+    color: #02448A;
+    font-family: "Fira Sans", Futura, Arial, sans-serif;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.info-view .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+}
+
+.info-view .image-section,
+.info-view .text-section {
+    flex: 1;
+}
+
+.info-view .info-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.info-view .image-caption {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.info-view .text-main,
+.info-view .text-secondary {
+    font-size: 18px;
+    color: #000;
+    font-family: "Fira Sans", Futura, Arial, sans-serif;
+    font-weight: 300;
+}
+
+.info-view .reference {
+    font-size: 9px;
+    color: #666;
+    margin-top: 20px;
+}
+
+.next-button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: #02448A;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.next-button:hover {
+    background-color: #003366;
+}
+
+.end-view {
+    text-align: center;
+    padding: 20px;
+}
+
+.end-view h1 {
+    font-size: 48px;
+    color: #02448A;
+}
+
+.end-view p {
+    font-size: 24px;
+    color: #333;
+    margin: 20px 0;
+}
+
+.restart-button {
+    padding: 10px 20px;
+    background-color: #02448A;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.restart-button:hover {
+    background-color: #003366;
+}
+
 .fullscreen-btn {
     position: fixed;
     top: 40px;
@@ -190,6 +291,27 @@ body, html {
     .question-text {
         font-size: 28px;
     }
+
+    .info-view .title {
+        font-size: 36px;
+    }
+
+    .info-view .content-wrapper {
+        flex-direction: column;
+    }
+
+    .info-view .text-main,
+    .info-view .text-secondary {
+        font-size: 16px;
+    }
+
+    .end-view h1 {
+        font-size: 36px;
+    }
+
+    .end-view p {
+        font-size: 20px;
+    }
 }
 
 /* Media query for very small screens (mobile portrait) */
@@ -225,7 +347,31 @@ body, html {
         font-size: 12px;
         padding: 6px 10px;
     }
+
     .question-text {
         font-size: 24px;
+    }
+
+    .info-view .title {
+        font-size: 28px;
+    }
+
+    .info-view .text-main,
+    .info-view .text-secondary {
+        font-size: 14px;
+    }
+
+    .next-button,
+    .restart-button {
+        font-size: 12px;
+        padding: 6px 15px;
+    }
+
+    .end-view h1 {
+        font-size: 28px;
+    }
+
+    .end-view p {
+        font-size: 18px;
     }
 }

@@ -1,5 +1,8 @@
 // Shared fullscreen toggling and button injection for all pages
 (function () {
+    const FULLSCREEN_INTENT_KEY = 'fullscreenIntent';
+    let explicitExitInProgress = false;
+
     // Inline SVG icon that matches the "four-corner" fullscreen glyph.
     const ICON_SVG = `
         <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -10,21 +13,94 @@
         </svg>
     `;
 
-    function toggleFullscreen() {
-        if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen().catch(err => {
-                console.error(`Error attempting to enable fullscreen: ${err.message}`);
-            });
-        } else {
-            document.exitFullscreen().catch(err => {
-                console.error(`Error attempting to exit fullscreen: ${err.message}`);
-            });
+    function isFullscreenIntentEnabled() {
+        return localStorage.getItem(FULLSCREEN_INTENT_KEY) === 'true';
+    }
+
+    function setFullscreenIntent(enabled) {
+        localStorage.setItem(FULLSCREEN_INTENT_KEY, enabled ? 'true' : 'false');
+    }
+
+    function enterFullscreen() {
+        if (document.fullscreenElement) {
+            return Promise.resolve();
         }
+
+        return document.documentElement.requestFullscreen().catch(err => {
+            console.error(`Error attempting to enable fullscreen: ${err.message}`);
+        });
+    }
+
+    function exitFullscreen() {
+        if (!document.fullscreenElement) {
+            return Promise.resolve();
+        }
+
+        return document.exitFullscreen().catch(err => {
+            console.error(`Error attempting to exit fullscreen: ${err.message}`);
+        });
+    }
+
+    function toggleFullscreen() {
+        if (isFullscreenIntentEnabled()) {
+            setFullscreenIntent(false);
+            explicitExitInProgress = true;
+            exitFullscreen();
+            return;
+        }
+
+        setFullscreenIntent(true);
+        enterFullscreen();
+    }
+
+    function resumeFullscreenIfNeeded() {
+        if (!isFullscreenIntentEnabled() || document.fullscreenElement) {
+            return;
+        }
+
+        enterFullscreen();
+    }
+
+    function scheduleResumeFullscreen() {
+        setTimeout(resumeFullscreenIfNeeded, 0);
+    }
+
+    function bindFullscreenResumeHandlers() {
+        const activationEvents = ['click', 'keydown', 'touchstart', 'pointerdown'];
+
+        activationEvents.forEach(eventName => {
+            window.addEventListener(eventName, resumeFullscreenIfNeeded, { passive: true });
+        });
+
+        window.addEventListener('pageshow', scheduleResumeFullscreen);
+        window.addEventListener('focus', scheduleResumeFullscreen);
+
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) {
+                scheduleResumeFullscreen();
+            }
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+            if (document.fullscreenElement) {
+                explicitExitInProgress = false;
+                return;
+            }
+
+            if (explicitExitInProgress) {
+                explicitExitInProgress = false;
+                return;
+            }
+
+            scheduleResumeFullscreen();
+        });
     }
 
     function setButtonIcon(btn) {
         if (!btn) return;
         btn.setAttribute('aria-label', 'Toggle Fullscreen');
+        // Prevent duplicate toggles on pages that still include inline onclick handlers.
+        btn.onclick = null;
         // Replace inner content with the inline SVG so it's consistent across pages
         btn.innerHTML = ICON_SVG;
     }
@@ -44,6 +120,8 @@
         document.querySelectorAll('.fullscreen-btn').forEach(setButtonIcon);
 
         createButtonIfMissing();
+        bindFullscreenResumeHandlers();
+        resumeFullscreenIfNeeded();
 
         // Delegate clicks to any element with .fullscreen-btn
         document.body.addEventListener('click', (e) => {
