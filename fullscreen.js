@@ -99,8 +99,6 @@
     function setButtonIcon(btn) {
         if (!btn) return;
         btn.setAttribute('aria-label', 'Toggle Fullscreen');
-        // Prevent duplicate toggles on pages that still include inline onclick handlers.
-        btn.onclick = null;
         // Replace inner content with the inline SVG so it's consistent across pages
         btn.innerHTML = ICON_SVG;
     }
@@ -131,6 +129,4 @@
         });
     });
 
-    // Expose for inline handlers if any page still uses onclick="toggleFullscreen()"
-    window.toggleFullscreen = toggleFullscreen;
 })();
